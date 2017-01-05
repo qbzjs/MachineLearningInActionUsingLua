@@ -104,6 +104,10 @@ end
 local function classify(input_tree, vector)
 	local value = vector[input_tree.feat_index]
 	local sub_tree = input_tree.feat_nodes[value]
+	if not sub_tree then
+		return
+	end
+
 	if sub_tree.feat_index then
 		return classify(sub_tree, vector)
 	end
