@@ -34,7 +34,7 @@ local function load_training(dir, ml)
 			end
 
 			index = index + 1
-			ml:add_training(num, vector)
+			ml:add_training_data(num, vector)
 		end
 	end	
 end
@@ -84,11 +84,11 @@ local function main_test()
 
 	if not ml:load(key) then
 		for i = 1, 5 do
-			ml:add_training(0, {math.random(1, 100)})
+			ml:add_training_data(0, {math.random(1, 100)})
 		end
 
 		for i = 1, 5 do
-			ml:add_training(1, {math.random(101, 200)})
+			ml:add_training_data(1, {math.random(101, 200)})
 		end
 		ml:save(key)
 		tree(ml)

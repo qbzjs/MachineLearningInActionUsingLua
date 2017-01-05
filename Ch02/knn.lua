@@ -13,7 +13,7 @@ function knn.create()
 	return ml
 end
 
-function mt:add_training(label, vector)
+function mt:add_training_data(label, vector)
 	assert(type(vector) == "table")
 
 	table.insert(self.training_label, label)
