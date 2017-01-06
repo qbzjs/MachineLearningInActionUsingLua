@@ -23,7 +23,7 @@ local function datarow2vector(dict, dict_count, datarow)
 	for _, element in pairs(datarow) do
 		local index = dict[element]
 		if index then
-			array[index] = 1
+			array[index] = array[index] + 1
 		end
 	end
 	return array
